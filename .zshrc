@@ -25,6 +25,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # zinit update --parallel
 
 eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
