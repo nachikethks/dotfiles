@@ -84,6 +84,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # Aliases
 alias ls='ls --color --hyperlink=auto'
 alias vim='nvim'
+alias grep='grep --color=auto'
 
 # Shell integrations
 eval "$(zoxide init --cmd cd zsh)"
