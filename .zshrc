@@ -77,7 +77,7 @@ zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # Aliases
-alias ls='ls --color'
+alias ls='ls --color --hyperlink=auto'
 alias vim='nvim'
 
 # Shell integrations
