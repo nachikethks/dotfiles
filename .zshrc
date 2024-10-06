@@ -26,6 +26,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export GIT_CONFIG=~/.config/git/.gitconfig
 
 # # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -84,6 +85,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # Aliases
 alias ls='ls --color --hyperlink=auto'
 alias vim='nvim'
+alias grep='grep --color=auto'
 
 # Shell integrations
 eval "$(zoxide init --cmd cd zsh)"
