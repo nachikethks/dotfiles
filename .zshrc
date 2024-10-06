@@ -1,6 +1,10 @@
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:${HOME}/.local/bin"
 export PATH="$PATH:${HOME}/.fzf/bin"
+export PATH="$PATH:${HOME}/miniconda3"
+
+# Prevent Conda from modifying the prompt
+export CONDA_CHANGEPS1=false
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -87,3 +91,19 @@ if [ !  -f ~/.fzf.zsh ]; then
     ~/.fzf/install
 fi
 source <(fzf --zsh)
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/nachiketh-k-s/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/nachiketh-k-s/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/nachiketh-k-s/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/nachiketh-k-s/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

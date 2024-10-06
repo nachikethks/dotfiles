@@ -1,6 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", "arkav/lualine-lsp-progress" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "arkav/lualine-lsp-progress", "folke/noice.nvim" },
     event = "VeryLazy",
     config = function()
         local lualine = require("lualine")
@@ -55,6 +55,10 @@ return {
                 },
                 lualine_x = {
                     {
+                        require("noice").api.status.mode.get,
+                        cond = require("noice").api.status.mode.has,
+                        color = { fg = "#ff9e64" },
+                    },              {
                         "diagnostics",
 
                         -- Table of diagnostic sources, available sources are:
