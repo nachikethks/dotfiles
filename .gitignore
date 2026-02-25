@@ -1,1 +1,12 @@
-.config/nvim/lazy-lock.json
+# Modular zsh secrets file - never commit
+zsh/.config/zsh/conf.d/99-secrets.zsh
+
+# Build artifacts and logs
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/startup.log
+nvim/.config/nvim/lazygit/
+
+# Completion cache
+zsh/.config/zsh/.zcompdump
+
+CLAUDE.md
