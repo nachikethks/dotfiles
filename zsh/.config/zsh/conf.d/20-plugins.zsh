@@ -18,7 +18,6 @@ zinit wait lucid for \
         zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions \
-    Aloxaf/fzf-tab \
     OMZP::git \
     OMZP::sudo \
     OMZP::cp \
