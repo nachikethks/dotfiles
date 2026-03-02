@@ -4,12 +4,15 @@ alias http='xh'
 alias https='xhs'
 alias btop='btop --utf-force'
 
-command -v batcat >/dev/null && alias cat='batcat'
+if (( $+commands[batcat] )); then
+    alias cat='batcat'
+elif (( $+commands[bat] )); then
+    alias cat='bat'
+fi
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ~='cd ~'
 alias -- -='cd -'
 
 alias openvpn_connect="sudo openvpn ~/Downloads/aihub-qa.ovpn"
