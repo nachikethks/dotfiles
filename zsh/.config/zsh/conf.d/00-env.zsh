@@ -16,5 +16,3 @@ esac
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Secrets (API keys) — gitignored, sourced if present
-[[ -f "$ZDOTDIR/conf.d/99-secrets.zsh" ]] && source "$ZDOTDIR/conf.d/99-secrets.zsh"

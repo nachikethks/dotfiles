@@ -4,5 +4,8 @@
 
 -- vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 vim.g.snacks_animate = false
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.g.autoformat = false
 vim.opt.showtabline = 0
+vim.opt.listchars = { trail = "·", extends = "❯", precedes = "❮", nbsp = "⚑" }
