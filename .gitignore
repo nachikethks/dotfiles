@@ -5,6 +5,8 @@ zsh/.config/zsh/conf.d/99-secrets.zsh
 nvim/.config/nvim/startup.log
 nvim/.config/nvim/lazygit/
 
+btop/.config/btop/btop.log
+
 # Completion cache
 zsh/.config/zsh/.zcompdump
 
