@@ -23,7 +23,3 @@ zinit wait lucid for \
         zsh-users/zsh-completions \
     OMZP::cp \
     OMZP::colored-man-pages
-
-
-zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat"
-zinit load sharkdp/bat
