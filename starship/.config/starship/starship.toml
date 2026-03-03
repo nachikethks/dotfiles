@@ -27,6 +27,8 @@ vimcmd_replace_one_symbol = "[](bold red)"
 vimcmd_replace_symbol = "[](bold red)"
 vimcmd_visual_symbol = "[](bold mauve)"
 
+[aws]
+disabled = true
 
 [docker_context]
 disabled = false
