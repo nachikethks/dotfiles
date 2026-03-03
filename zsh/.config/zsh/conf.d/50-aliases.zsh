@@ -15,8 +15,7 @@ alias ....='cd ../../..'
 alias -- -='cd -'
 alias gs='git status'
 
-if (( $+commands[btop] )) && [[ "$(locale charmap 2>/dev/null)" != "UTF-8" ]] \
-    && btop --help 2>&1 | grep -q 'utf-force'; then
+if (( $+commands[btop] )) && btop --help 2>&1 | grep -q 'utf-force'; then
     alias btop='btop --utf-force'
 fi
 
