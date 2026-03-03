@@ -13,6 +13,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `tmux`     | `~/.config/tmux/`      | `tmux`                              |
 | `zellij`   | `~/.config/zellij/`    | `zellij`                            |
 | `nvim`     | `~/.config/nvim/`      | `neovim >= 0.11`, `git`, `rg`, `fd`, `lazygit`, `fzf`, `tree-sitter`, `node`, `luarocks`, `python3`/`pynvim`, `xclip`, `cargo`, `clang`, `llvm`, `unzip` |
+| `keyd`     | `/etc/keyd/` (system)  | `keyd` (AUR/pacman), `systemctl enable --now keyd` |
 
 ## Dependencies
 
@@ -160,8 +161,12 @@ export AWS_PROFILE="..."
 │   └── kitty-scrollback.conf
 ├── tmux/.config/tmux/tmux.conf
 ├── zellij/.config/zellij/config.kdl
-└── nvim/.config/nvim/
-    ├── init.lua
-    ├── lazyvim.json
-    └── lazy-lock.json
+├── nvim/.config/nvim/
+│   ├── init.lua
+│   ├── lazyvim.json
+│   └── lazy-lock.json
+└── keyd/etc/keyd/
+    └── default.conf         # CapsLock = Esc (tap) / Ctrl (hold)
 ```
+
+> **Note:** `keyd` stows to `/etc/keyd/` (a system path). Use `sudo stow --target=/ keyd` instead of the regular `stow */`.

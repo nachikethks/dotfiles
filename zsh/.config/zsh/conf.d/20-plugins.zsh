@@ -7,6 +7,9 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Disable aliases for all omz plugins
+zstyle ':omz:plugins:*' aliases no
+
 # Load immediately (must be before compinit)
 zinit light zpm-zsh/clipboard
 
@@ -18,15 +21,9 @@ zinit wait lucid for \
         zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions \
-    OMZP::git \
-    OMZP::sudo \
     OMZP::cp \
     OMZP::colored-man-pages
 
-zstyle ':omz:plugins:eza' icons yes
-zinit ice from"gh-r" as"program" mv"eza* -> eza" pick"eza"
-zinit load eza-community/eza
-zinit snippet OMZP::eza
 
 zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat"
 zinit load sharkdp/bat
