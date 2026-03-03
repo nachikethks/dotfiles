@@ -8,11 +8,11 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 |------------|------------------------|-------------------------------------|
 | `zsh`      | `~/.zshenv`, `~/.config/zsh/` | `zsh`, `zinit` (auto-installed), `starship`, `zoxide`, `fzf` (auto-installed), `eza`, `bat`, `uv` |
 | `git`      | `~/.config/git/`       | `git`, `delta`                      |
-| `starship` | `~/.config/starship/`  | `starship`                          |
+| `starship` | `~/.config/starship/`  | `starship`, `noto-fonts-emoji`, `ttf-jetbrains-mono-nerd`,                           |
 | `kitty`    | `~/.config/kitty/`     | `kitty`                             |
 | `tmux`     | `~/.config/tmux/`      | `tmux`                              |
 | `zellij`   | `~/.config/zellij/`    | `zellij`                            |
-| `nvim`     | `~/.config/nvim/`      | `neovim >= 0.11`, `git`, `rg`, `fd`, `lazygit`, `fzf`, `tree-sitter`, `node`, `luarocks`, `python3`/`pynvim`, `xclip` |
+| `nvim`     | `~/.config/nvim/`      | `neovim >= 0.11`, `git`, `rg`, `fd`, `lazygit`, `fzf`, `tree-sitter`, `node`, `luarocks`, `python3`/`pynvim`, `xclip`, `cargo`, `clang`, `llvm`, `unzip` |
 
 ## Dependencies
 
@@ -27,7 +27,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `fd` | Fast find, used by nvim/lazyvim | `sudo apt install fd-find` |
 | `fzf` | Fuzzy finder | auto-installed by zinit |
 | `lazygit` | TUI git client | [releases](https://github.com/jesseduffield/lazygit/releases) |
-| `tree-sitter` | Treesitter CLI | `cargo install tree-sitter-cli` or `npm i -g tree-sitter-cli` |
+| `tree-sitter` | Treesitter CLI | `cargo install --locked tree-sitter-cli` or `npm i -g tree-sitter-cli` |
 | `delta` | Git diff pager | `sudo apt install git-delta` |
 | `eza` | Modern `ls` | `sudo apt install eza` |
 | `bat` | Modern `cat` | `sudo apt install bat` |
