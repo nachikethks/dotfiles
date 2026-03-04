@@ -6,8 +6,9 @@ nvim/.config/nvim/startup.log
 nvim/.config/nvim/lazygit/
 
 btop/.config/btop/btop.log
+btop/.config/btop/btop.conf
 
 # Completion cache
-zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zcompdump*
 
 CLAUDE.md
