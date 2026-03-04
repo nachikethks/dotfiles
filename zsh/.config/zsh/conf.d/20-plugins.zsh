@@ -10,9 +10,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Disable aliases for all omz plugins
 zstyle ':omz:plugins:*' aliases no
 
-# Load immediately (must be before compinit)
-zinit light zpm-zsh/clipboard
-
 # Turbo mode for faster loading
 zinit wait lucid for \
     atinit"zicompinit; zicdreplay" \
