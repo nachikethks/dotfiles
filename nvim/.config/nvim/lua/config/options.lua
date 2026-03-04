@@ -9,3 +9,6 @@ vim.opt.splitbelow = true
 vim.g.autoformat = false
 vim.opt.showtabline = 0
 vim.opt.listchars = { trail = "·", extends = "❯", precedes = "❮", nbsp = "⚑" }
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true

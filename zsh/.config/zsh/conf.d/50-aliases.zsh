@@ -2,11 +2,11 @@ if (( $+commands[eza] )); then
     alias l='eza --icons'
     alias ls='eza --icons'
     alias la='eza --icons --all'
-    alias ll='eza --icons --long --header --total-size'
-    alias lla='eza --icons --long --header --all --total-size'
-    alias ltr='eza --icons --long --header --reverse --sort=modified --total-size'
+    alias ll='eza --icons --long --header'
+    alias lla='eza --icons --long --header --all'
+    alias ltr='eza --icons --long --header --sort=modified'
     alias ltrh='ltr'
-    alias ltra='eza --icons --long --header --reverse --sort=modified --total-size --all'
+    alias ltra='eza --icons --long --header --sort=modified --all'
     alias ltrha='ltra'
 fi
 
