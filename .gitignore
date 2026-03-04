@@ -1,6 +1,8 @@
 # Modular zsh secrets file - never commit
 zsh/.config/zsh/conf.d/99-secrets.zsh
 
+git/.config/git/local.conf
+
 # Build artifacts and logs
 nvim/.config/nvim/startup.log
 nvim/.config/nvim/lazygit/
