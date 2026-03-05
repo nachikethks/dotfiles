@@ -1,0 +1,120 @@
+@import "mocha.css";
+
+* {
+    font-family: sans-serif, "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @base;
+    border-radius: 12px;
+    padding: 0 6px;
+}
+
+/* Common module styling */
+#custom-launcher,
+#clock,
+#custom-updates,
+#mpris,
+#workspaces,
+#wireplumber,
+#network,
+#battery,
+#custom-notification {
+    padding: 0 10px;
+    color: @text;
+}
+
+/* Launcher */
+#custom-launcher {
+    color: @blue;
+    font-size: 16px;
+    padding-left: 12px;
+}
+
+/* Clock */
+#clock {
+    color: @lavender;
+}
+
+/* Updates */
+#custom-updates {
+    color: @peach;
+}
+
+/* Media player */
+#mpris {
+    color: @green;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 4px;
+    color: @overlay1;
+    background: transparent;
+    font-size: 10px;
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#workspaces button.empty {
+    color: @surface2;
+}
+
+#workspaces button:hover {
+    background: @surface0;
+    border-radius: 8px;
+}
+
+/* Volume */
+#wireplumber {
+    color: @teal;
+}
+
+#wireplumber.muted {
+    color: @overlay1;
+}
+
+/* Network */
+#network {
+    color: @sapphire;
+}
+
+#network.disconnected {
+    color: @overlay1;
+}
+
+/* Battery */
+#battery {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.charging {
+    color: @teal;
+}
+
+/* Notification */
+#custom-notification {
+    color: @text;
+    padding-right: 12px;
+}
