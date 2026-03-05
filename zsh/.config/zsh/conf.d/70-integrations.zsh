@@ -15,6 +15,7 @@ _cached_source() {
 _cached_source starship init zsh
 _cached_source zoxide init --cmd cd zsh
 _cached_source fzf --zsh
+_cached_source navi widget zsh
 
 # Lazy-load uv completions on first use
 if (( $+commands[uv] )); then

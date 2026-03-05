@@ -1,0 +1,37 @@
+[general]
+fullscreen = false
+resize = { mode = "smart" }
+floating-hack = true
+early-exit = true
+corner-roundness = 12
+initial-tool = "brush"
+copy-command = "wl-copy"
+annotation-size-factor = 2
+output-filename = "~/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png"
+save-after-copy = true
+no-window-decoration = false
+primary-highlighter = "block"
+actions-on-enter = ["save-to-clipboard"]
+actions-on-escape = ["exit"]
+
+[font]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[color-palette]
+palette = [
+    "#cdd6f4",
+    "#f38ba8",
+    "#a6e3a1",
+    "#f9e2af",
+    "#89b4fa",
+    "#cba6f7",
+]
+custom = [
+    "#cdd6f4",
+    "#f38ba8",
+    "#a6e3a1",
+    "#f9e2af",
+    "#89b4fa",
+    "#cba6f7",
+]
