@@ -1,55 +1,46 @@
-* {
-    background-image: none;
-    box-shadow: none;
-}
-
 window {
-    background-color: rgba(30, 30, 46, 0.9);
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 12pt;
+    color: #cdd6f4; 
+    background-color: rgba(0, 0, 0, .9);
 }
 
 button {
-    color: #cdd6f4;
-    background-color: #313244;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #45475a;
-    border-radius: 12px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 40%;
-    margin: 8px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-size: 60%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #fbf1c7;
+    text-shadow: none;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(1, 121, 111, 0);
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-button:focus,
-button:active,
 button:hover {
-    background-color: #45475a;
-    border-color: #cba6f7;
-    color: #cba6f7;
-    outline-style: none;
+    background-color: rgba(213, 196, 161, 0.1);
 }
 
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
-}
-
-#hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+    background-image: image(url("$HOME/.config/wlogout/icons/lock.png"));
+    background-size: 70%;
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
-}
-
-#shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+    background-image: image(url("$HOME/.config/wlogout/icons/logout.png"));
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+    background-image: image(url("$HOME/.config/wlogout/icons/sleep.png"));
+}
+
+#shutdown {
+    background-image: image(url("$HOME/.config/wlogout/icons/power.png"));
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+    background-image: image(url("$HOME/.config/wlogout/icons/restart.png"));
 }
