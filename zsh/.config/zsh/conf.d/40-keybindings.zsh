@@ -4,6 +4,6 @@ bindkey '^n' history-search-forward
 bindkey '^I' complete-word
 
 # Accept autosuggestion (full line)
-bindkey '^f' forward-char
+bindkey '^l' forward-char
 # Accept autosuggestion word by word
-bindkey '^l' forward-word
+bindkey '^f' forward-word

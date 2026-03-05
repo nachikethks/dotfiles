@@ -46,13 +46,15 @@ if (( $+commands[docker] )); then
     }
 fi
 
-if (( $+commands[rg] && $+commands[fzf] && $+commands[bat] && $+commands[nvim] )); then
+if (( $+commands[rg] && $+commands[fzf] && ($+commands[bat] || $+commands[batcat]) && $+commands[nvim] )); then
     function rgf() {
+        local bat_cmd
+        (( $+commands[batcat] )) && bat_cmd=batcat || bat_cmd=bat
         rg --color=always --line-number --no-heading --smart-case "${*:-}" |
         fzf --ansi \
             --color "hl:-1:underline,hl+:-1:underline:reverse" \
             --delimiter : \
-            --preview 'bat --color=always {1} --highlight-line {2}' \
+            --preview "$bat_cmd --color=always {1} --highlight-line {2}" \
             --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
             --bind 'enter:become(nvim {1} +{2})'
     }
