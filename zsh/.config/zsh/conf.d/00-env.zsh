@@ -1,3 +1,6 @@
+export LANG=en_IN.UTF-8
+export LC_ALL=en_IN.UTF-8
+
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:${HOME}/.local/bin"
 export PATH="$PATH:${HOME}/.fzf/bin"
