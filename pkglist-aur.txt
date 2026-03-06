@@ -1,0 +1,9 @@
+breeze-snow-cursor-theme
+catppuccin-gtk-theme-mocha
+grimblast-git
+localsend-bin
+pyprland
+swayimg-git
+wlogout
+yay
+zen-browser-bin

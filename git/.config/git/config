@@ -2,7 +2,7 @@
   path = ~/.config/git/local.conf
 
 [core]
-  editor = vim
+  editor = nvim
   whitespace = fix,trailing-space,cr-at-eol
   hooksPath = ~/.config/git/hooks
   excludesfile = ~/.ignore
