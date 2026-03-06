@@ -32,6 +32,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias -- -='cd -'
 (( $+commands[git] )) && alias gs='git status'
+(( $+commands[csvlens] )) && alias csvlens='csvlens --color-columns'
 
 if (( $+commands[btop] )) && btop --help 2>&1 | grep -q 'utf-force'; then
     alias btop='btop --utf-force'
