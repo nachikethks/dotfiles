@@ -18,5 +18,4 @@ zinit wait lucid for \
         zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions \
-    OMZP::cp \
     OMZP::colored-man-pages
