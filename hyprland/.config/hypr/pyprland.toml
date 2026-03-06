@@ -1,0 +1,19 @@
+[pyprland]
+plugins = ["scratchpads", "magnify", "monitors", "lost_windows"]
+
+[scratchpads.term]
+animation = "fromBottom"
+command = "kitty --class scratchpad"
+class = "scratchpad"
+size = "75% 60%"
+unfocus = "hide"
+
+[scratchpads.btop]
+animation = "fromBottom"
+command = "kitty --class scratchpad-btop -e btop"
+class = "scratchpad-btop"
+size = "85% 70%"
+unfocus = "hide"
+
+[magnify]
+factor = 2

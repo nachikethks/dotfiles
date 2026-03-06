@@ -1,29 +1,43 @@
 window {
     font-family: "SF Pro", "SF Pro Display", sans-serif;
     font-size: 12pt;
-    color: #cdd6f4;
+    color: @foreground;
     background-color: rgba(0, 0, 0, .9);
 }
 
 button {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 60%;
+    background-size: 20%;
+    background-color: rgba(200, 220, 255, 0);
+    animation: gradient_f 10s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    box-shadow: none;
+    border-radius: 20px;
     border: none;
     outline: none;
-    box-shadow: none;
-    color: #fbf1c7;
-    text-shadow: none;
-    border-radius: 20px 20px 20px 20px;
-    background-color: rgba(1, 121, 111, 0);
     margin: 5px;
-    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    color: rgba(205, 214, 244, 0.5);
+    font-size: 14pt;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-shadow: none;
+}
+
+button:focus {
+    background-size: 50%;
+    border: 0px;
+    outline-style: none;
+    color: #ffffff;
+    font-size: 16pt;
 }
 
 button:hover {
-    background-color: rgba(213, 196, 161, 0.1);
-    background-size: 65%;
-    transition: background-size 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    background-size: 50%;
+    border: 0px;
+    outline-style: none;
+    color: #ffffff;
+    font-size: 16pt;
 }
 
 #lock {
