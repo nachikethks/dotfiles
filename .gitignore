@@ -13,6 +13,8 @@ btop/.config/btop/btop.conf
 
 tmux/.config/tmux/plugins/
 
+.claude/
+
 # Completion cache
 zsh/.config/zsh/.zcompdump*
 
