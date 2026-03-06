@@ -1,3 +1,6 @@
+autoload -U edit-command-line
+zle -N edit-command-line
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [ ! -d "$ZINIT_HOME" ]; then

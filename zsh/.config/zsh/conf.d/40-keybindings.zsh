@@ -1,3 +1,7 @@
+bindkey -e
+
+bindkey '^E' edit-command-line
+
 bindkey '^r' history-incremental-search-backward
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
