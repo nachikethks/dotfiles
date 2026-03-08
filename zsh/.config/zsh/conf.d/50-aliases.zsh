@@ -1,15 +1,17 @@
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain --color always' 
 
 if (( $+commands[eza] )); then
-    alias l='eza --icons'
-    alias ls='eza --icons'
-    alias la='eza --icons --all'
-    alias ll='eza --icons --long --header'
-    alias lla='eza --icons --long --header --all'
-    alias ltr='eza --icons --long --header --sort=modified'
+    alias l='eza --icons --group-directories-first'
+    alias ls='eza --icons --group-directories-first'
+    alias la='eza --icons --all --group-directories-first'
+    alias ll='eza --icons --long --header --group-directories-first'
+    alias lla='eza --icons --long --header --all --group-directories-first'
+    alias ltr='eza --icons --long --header --sort=modified --group-directories-first'
     alias ltrh='ltr'
-    alias ltra='eza --icons --long --header --sort=modified --all'
+    alias ltra='eza --icons --long --header --sort=modified --all --group-directories-first'
     alias ltrha='ltra'
+    alias lsd='eza --icons --long --header --only-dirs'
+    alias lsf='eza --icons --long --header --only-files'
 fi
 
 if (( $+commands[nvim] )); then
