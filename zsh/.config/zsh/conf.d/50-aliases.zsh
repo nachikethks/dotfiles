@@ -1,3 +1,5 @@
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain --color always' 
+
 if (( $+commands[eza] )); then
     alias l='eza --icons'
     alias ls='eza --icons'
