@@ -34,6 +34,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias -- -='cd -'
 (( $+commands[git] )) && alias gs='git status'
+(( $+commands[git] )) && alias gap='git add -p'
+(( $+commands[git] )) && alias gc='git commit'
+(( $+commands[git] )) && alias gca='git commit --amend'
 (( $+commands[csvlens] )) && alias csvlens='csvlens --color-columns'
 
 if (( $+commands[btop] )) && btop --help 2>&1 | grep -q 'utf-force'; then
