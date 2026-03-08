@@ -65,3 +65,27 @@ if (( $+commands[rg] && $+commands[fzf] && ($+commands[bat] || $+commands[batcat
             --bind 'enter:become(nvim {1} +{2})'
     }
 fi
+
+# SSH port forwarding utilities
+# fip — forward input ports: ssh -f (background) -N (no commands) -L (local forward)
+fip() {
+    (( $# < 2 )) && echo "Usage: fip <host> <port1> [port2] ..." && return 1
+    local host="$1"
+    shift
+    for port in "$@"; do
+        ssh -f -N -L "$port:localhost:$port" "$host" && echo "Forwarding localhost:$port -> $host:$port"
+    done
+}
+
+# dip — delete/disconnect input ports: kill the ssh processes doing the forwarding
+dip() {
+    (( $# == 0 )) && echo "Usage: dip <port1> [port2] ..." && return 1
+    for port in "$@"; do
+        pkill -f "ssh.*-L $port:localhost:$port" && echo "Stopped forwarding port $port" || echo "No forwarding on port $port"
+    done
+}
+
+# lip — list input ports: show active ssh port forwards
+lip() {
+    pgrep -af "ssh.*-L [0-9]+:localhost:[0-9]+" || echo "No active forwards"
+}
