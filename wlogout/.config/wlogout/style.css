@@ -24,7 +24,7 @@ button {
     text-shadow: none;
 }
 
-button:focus {
+button:focus, button:hover {
     background-size: 50%;
     border: 0px;
     outline-style: none;
@@ -32,13 +32,6 @@ button:focus {
     font-size: 16pt;
 }
 
-button:hover {
-    background-size: 50%;
-    border: 0px;
-    outline-style: none;
-    color: #ffffff;
-    font-size: 16pt;
-}
 
 #lock {
     background-image: image(url("$HOME/.config/wlogout/icons/lock.png"));
