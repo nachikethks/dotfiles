@@ -58,8 +58,13 @@ symbol = " "
 
 [directory]
 format = " [$path]($style)[$read_only]($read_only_style) "
+repo_root_format = " [$repo_root]($repo_root_style)[$path]($repo_root_style)[$read_only]($read_only_style) "
 style = "bold green"
+repo_root_style = "bold green"
 read_only = "  "
+truncation_symbol = "../"
+truncation_length = 3
+truncate_to_repo = false
 
 [git_branch]
 symbol = " "
@@ -68,21 +73,20 @@ style = "bold yellow"
 
 [git_status]
 format = "$all_status($style) "
-
-conflicted = "[ conflicted ](bold red)"  
-ahead = "[ ahead ${count} ](bold yellow)"        
-behind = "[ behind ${count} ](bold mauve)"      
+conflicted = "[ conflicted ](bold red)"
+ahead = "[ ahead ${count} ](bold yellow)"
+behind = "[ behind ${count} ](bold mauve)"
 untracked = "[ ](bold blue)"
-stashed = "[ ](bold sky)"    
-modified = "[ ](bold peach)"
-staged = "[ ](bold green)"   
+stashed = "[ ](bold sky)"
+modified = "[ ](bold peach)"
+staged = "[ ](bold green)"
 renamed = "[ ](bold lavender)"
-deleted = "[✘ ](bold red)"    
-diverged = '[ diverged ${ahead_count} ${behind_count}](bold red)'
+deleted = "[ ](bold red)"
+diverged = "[ diverged ${ahead_count} ${behind_count}](bold red)"
 
 [memory_usage]
 disabled = false
-threshold = 90
+threshold = 85
 symbol = '󰍛'
 style = 'bold dimmed red'
 format = '$symbol [${ram}]($style) '
