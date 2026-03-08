@@ -1,9 +1,12 @@
 breeze-snow-cursor-theme
 catppuccin-gtk-theme-mocha
+elephant
 grimblast-git
+hyprmon-bin
 localsend-bin
 pyprland
 swayimg-git
+walker-bin
 wlogout
 yay
 zen-browser-bin

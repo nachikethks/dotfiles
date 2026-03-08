@@ -4,6 +4,7 @@ amd-ucode
 base
 base-devel
 bat
+bluetui
 blueman
 bluez
 bluez-utils
@@ -14,6 +15,7 @@ cliphist
 csvlens
 cups
 cups-pk-helper
+discord
 efibootmgr
 eza
 fastfetch
@@ -28,6 +30,7 @@ hyprland
 hyprlock
 hyprpolkitagent
 imagemagick
+impala
 jq
 keyd
 kitty
@@ -54,9 +57,11 @@ npm
 nwg-look
 openssh
 os-prober
+papirus-icon-theme
 pavucontrol
 pipewire
 pipewire-alsa
+plymouth
 pipewire-jack
 pipewire-pulse
 power-profiles-daemon
@@ -95,6 +100,7 @@ wget
 wireplumber
 wl-clip-persist
 wl-clipboard
+wtype
 woff2-font-awesome
 wofi
 xdg-desktop-portal-hyprland
@@ -104,6 +110,7 @@ xf86-video-amdgpu
 xorg-server
 yazi
 zathura
+zellij
 zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
