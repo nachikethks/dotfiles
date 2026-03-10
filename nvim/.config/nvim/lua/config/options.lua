@@ -7,6 +7,7 @@ vim.g.snacks_animate = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.g.autoformat = false
+vim.g.ai_cmp = false
 vim.opt.showtabline = 0
 vim.opt.listchars = { trail = "·", extends = "❯", precedes = "❮", nbsp = "⚑" }
 vim.opt.tabstop = 4

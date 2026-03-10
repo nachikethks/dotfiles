@@ -7,7 +7,12 @@ return {
         ['<C-k>'] = {'select_prev'},
         ['<Tab>'] = {'select_and_accept'},
         ["<CR>"]   = false
-      }
+      },
+      completion = {
+        menu = {
+          direction_priority = { "n", "s" },
+        },
+      },
     }
   },
 }
