@@ -1,6 +1,10 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    explorer = {
+      -- Don't hijack directory buffers on startup (keeps explorer closed by default)
+      replace_netrw = false,
+    },
     picker = {
       layouts = {
         vertical = {

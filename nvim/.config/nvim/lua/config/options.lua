@@ -2,6 +2,10 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- Keep dashboard behavior clean when opening directories without netrw taking over.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 vim.g.snacks_animate = false
 vim.opt.splitright = true
