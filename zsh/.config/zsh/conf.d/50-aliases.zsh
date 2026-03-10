@@ -1,4 +1,3 @@
-alias -g -- --help='--help 2>&1 | bat --language=help --style=plain --color always' 
 
 if (( $+commands[eza] )); then
     alias l='eza --icons --group-directories-first'
@@ -30,6 +29,8 @@ if (( $+commands[batcat] )); then
 elif (( $+commands[bat] )); then
     alias cat='bat'
 fi
+
+alias -g -- --help='--help 2>&1 | cat --language=help --style=plain --color always'
 
 alias ..='cd ..'
 alias ...='cd ../..'
