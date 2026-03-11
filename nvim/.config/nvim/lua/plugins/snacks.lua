@@ -1,3 +1,31 @@
+local layout_presets = {
+  "default",
+  "bottom",
+  "top",
+  "dropdown",
+  "left",
+  "right",
+  "ivy",
+  "ivy_split",
+  "select",
+  "sidebar",
+  "telescope",
+  "vertical",
+  "vscode",
+}
+
+local function apply_preset(picker, preset)
+  local ok, layout = pcall(Snacks.picker.config.layout, { layout = preset })
+  if not ok then
+    vim.notify("Snacks layout preset not found: " .. preset, vim.log.levels.WARN)
+    return
+  end
+
+  picker._layout_preset = preset
+  picker:set_layout(layout)
+  vim.notify("Snacks picker layout: " .. preset, vim.log.levels.INFO)
+end
+
 return {
   "folke/snacks.nvim",
   opts = {
@@ -25,17 +53,20 @@ return {
         },
       },
       actions = {
-        toggle_vertical = function(picker)
-          local current = picker.layout.opts.layout
-          local target = current.box == "vertical" and "default" or "vertical"
-          local layout = Snacks.picker.config.layout({ layout = target })
-          picker:set_layout(layout)
+        pick_layout_preset = function(picker)
+          vim.ui.select(layout_presets, {
+            prompt = "Snacks picker layout preset",
+          }, function(choice)
+            if choice then
+              apply_preset(picker, choice)
+            end
+          end)
         end,
       },
       win = {
         input = {
           keys = {
-            ["<a-l>"] = { "toggle_vertical", mode = { "i", "n" } },
+            ["<a-l>"] = { "pick_layout_preset", mode = { "i", "n" } },
           },
         },
       },
