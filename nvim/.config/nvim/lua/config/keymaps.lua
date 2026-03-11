@@ -141,3 +141,18 @@ vim.keymap.set("n", "<leader>sX", function()
     vim.notify("Removed LSP workspace folder: " .. vim.fn.fnamemodify(choice, ":~"))
   end)
 end, { desc = "LSP Remove Workspace Folder" })
+
+local function floating_terminal(opts)
+  opts = vim.tbl_deep_extend("force", {
+    win = { position = "float" },
+  }, opts or {})
+  Snacks.terminal(nil, opts)
+end
+
+vim.keymap.set("n", "<leader>fT", function()
+  floating_terminal()
+end, { desc = "Terminal (cwd, Float)" })
+
+vim.keymap.set("n", "<leader>ft", function()
+  floating_terminal({ cwd = project_root() })
+end, { desc = "Terminal (Root Dir, Float)" })
