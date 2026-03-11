@@ -35,7 +35,7 @@ return {
       win = {
         input = {
           keys = {
-            ["<c-l>"] = { "toggle_vertical", mode = { "i", "n" } },
+            ["<a-l>"] = { "toggle_vertical", mode = { "i", "n" } },
           },
         },
       },
