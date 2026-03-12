@@ -12,6 +12,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      diagnostics = {
+        virtual_text = false,
+        virtual_lines = false,
+      },
       servers = {
         pyright = { enabled = false },
       },
