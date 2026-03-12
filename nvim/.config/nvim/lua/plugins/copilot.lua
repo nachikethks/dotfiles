@@ -1,19 +1,25 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      suggestion = {
-        keymap = {
-          accept = "<S-Tab>",
-        },
-      },
-    },
-  },
-  {
     "copilotlsp-nvim/copilot-lsp",
     init = function()
-      vim.g.copilot_nes_debounce = 500
+      local nes_ui = require("copilot-lsp.nes.ui")
+      local orig_display_next_suggestion = nes_ui._display_next_suggestion
+      nes_ui._display_next_suggestion = function(bufnr, ns_id, edits)
+        if vim.api.nvim_get_mode().mode:sub(1, 1) == "i" then
+          return false
+        end
+        return orig_display_next_suggestion(bufnr, ns_id, edits)
+      end
+
+      vim.g.copilot_nes_debounce = 200
       vim.lsp.enable("copilot_ls")
+
+      vim.api.nvim_create_autocmd("InsertEnter", {
+        callback = function()
+          require("copilot-lsp.nes").clear()
+        end,
+        desc = "Hide Copilot NES in insert mode",
+      })
 
       -- Accept NES suggestion in normal mode with Tab
       local function accept_nes_or_fallback()
@@ -28,26 +34,14 @@ return {
         end
       end
 
-      local function accept_nes_insert_or_fallback()
-        local ok, suggestion = pcall(require, "copilot.suggestion")
-        if ok and suggestion.is_visible() then
-          suggestion.accept()
-          return ""
-        end
-
-        local nes = require("copilot-lsp.nes")
-        local state = vim.b[vim.api.nvim_get_current_buf()].nes_state
-        if state then
-          local _ = nes.walk_cursor_start_edit()
-            or (nes.apply_pending_nes() and nes.walk_cursor_end_edit())
-          return ""
-        end
-
-        return "<S-Tab>"
-      end
-
       vim.keymap.set("n", "<tab>", accept_nes_or_fallback, { expr = true, desc = "Accept Copilot NES" })
-      vim.keymap.set("i", "<S-Tab>", accept_nes_insert_or_fallback, { expr = true, desc = "Accept Copilot NES" })
+      vim.keymap.set("n", "<Esc>", function()
+        require("copilot-lsp.nes").clear()
+      end, { desc = "Clear Copilot NES" })
+      vim.keymap.set("i", "<Esc>", function()
+        require("copilot-lsp.nes").clear()
+        return "<Esc>"
+      end, { expr = true, desc = "Clear Copilot NES and Esc" })
     end,
     opts = {
       nes = {

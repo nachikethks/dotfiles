@@ -1,16 +1,34 @@
 return {
   {
     "saghen/blink.cmp",
+    dependencies = { "fang2hou/blink-copilot" },
     opts = {
       keymap = {
         ['<C-j>'] = {'select_next'},
         ['<C-k>'] = {'select_prev'},
-        ['<Tab>'] = {'select_and_accept'},
+        ['<Tab>'] = { 'snippet_forward', 'select_and_accept', 'fallback' },
         ["<CR>"]   = false
       },
       completion = {
         menu = {
           direction_priority = { "n", "s" },
+        },
+        ghost_text = {
+          enabled = true,
+        },
+      },
+      sources = {
+        default = { "copilot", "lsp", "path", "snippets", "buffer" },
+        providers = {
+          copilot = {
+            name = "copilot",
+            module = "blink-copilot",
+            score_offset = 100,
+            async = true,
+            opts = {
+              max_completions = 2,
+            },
+          },
         },
       },
     }
