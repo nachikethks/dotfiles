@@ -1,6 +1,7 @@
-bindkey -e
+bindkey -v
+KEYTIMEOUT=1
 
-bindkey '^E' edit-command-line
+# bindkey '^E' edit-command-line
 
 bindkey '^r' history-incremental-search-backward
 bindkey '^p' history-search-backward
