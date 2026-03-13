@@ -8,7 +8,14 @@ return {
         if vim.api.nvim_get_mode().mode:sub(1, 1) == "i" then
           return false
         end
-        return orig_display_next_suggestion(bufnr, ns_id, edits)
+        local result = orig_display_next_suggestion(bufnr, ns_id, edits)
+        if result and edits and #edits > 1 then
+          for i = 2, math.min(3, #edits) do
+            local preview = nes_ui._calculate_preview(bufnr, edits[i])
+            nes_ui._display_preview(bufnr, ns_id, preview)
+          end
+        end
+        return result
       end
 
       vim.g.copilot_nes_debounce = 200
@@ -35,13 +42,24 @@ return {
       end
 
       vim.keymap.set("n", "<tab>", accept_nes_or_fallback, { expr = true, desc = "Accept Copilot NES" })
-      vim.keymap.set("n", "<Esc>", function()
-        require("copilot-lsp.nes").clear()
-      end, { desc = "Clear Copilot NES" })
-      vim.keymap.set("i", "<Esc>", function()
-        require("copilot-lsp.nes").clear()
-        return "<Esc>"
-      end, { expr = true, desc = "Clear Copilot NES and Esc" })
+
+      -- Use VeryLazy + vim.schedule to ensure these run after LazyVim's default <Esc> mapping
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "VeryLazy",
+        once = true,
+        callback = function()
+          vim.schedule(function()
+            vim.keymap.set("n", "<Esc>", function()
+              require("copilot-lsp.nes").clear()
+              vim.cmd("nohlsearch")
+            end, { desc = "Clear Copilot NES" })
+            vim.keymap.set("i", "<Esc>", function()
+              require("copilot-lsp.nes").clear()
+              return "<Esc>"
+            end, { expr = true, desc = "Clear Copilot NES and Esc" })
+          end)
+        end,
+      })
     end,
     opts = {
       nes = {
