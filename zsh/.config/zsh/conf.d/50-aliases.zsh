@@ -50,8 +50,58 @@ alias openvpn_connect="sudo openvpn ~/Downloads/aihub-qa.ovpn"
 alias claude-mem="$HOME/.bun/bin/bun \"$HOME/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs\""
 
 if (( $+commands[docker] )); then
+    function _docker_pick_container() {
+        local query="$1"
+        local selected
+        local -a names matches
+
+        names=("${(@f)$(docker ps --format '{{.Names}}')}")
+        (( ${#names[@]} == 0 )) && { echo "No running containers found."; return 1; }
+
+        if [[ -n "$query" ]]; then
+            if (( ${names[(Ie)$query]} )); then
+                print -r -- "$query"
+                return 0
+            fi
+
+            matches=("${(@M)names:#*${query}*}")
+            if (( ${#matches[@]} == 1 )); then
+                print -r -- "${matches[1]}"
+                return 0
+            fi
+
+            if (( ${#matches[@]} > 1 )); then
+                if (( $+commands[fzf] )); then
+                    selected="$(print -rl -- "${matches[@]}" | fzf --prompt='container> ' --select-1 --exit-0)"
+                    [[ -n "$selected" ]] && print -r -- "$selected"
+                    return $?
+                fi
+                echo "Multiple containers match '$query': ${matches[*]}"
+                return 1
+            fi
+        fi
+
+        if (( $+commands[fzf] )); then
+            selected="$(print -rl -- "${names[@]}" | fzf --prompt='container> ' --select-1 --exit-0)"
+            [[ -n "$selected" ]] && print -r -- "$selected"
+            return $?
+        fi
+
+        echo "No exact container match for '$query'. Install fzf or use an exact name."
+        return 1
+    }
+
     function de() {
-        docker exec -i -t $1 /bin/bash -c 'export TERM=xterm; /bin/bash'
+        local container
+        container="$(_docker_pick_container "$1")" || return 1
+        docker exec -it "$container" /bin/bash -lc 'export TERM=xterm; exec /bin/bash'
+    }
+
+    function dl() {
+        local container
+        local lines="${2:-100}"
+        container="$(_docker_pick_container "$1")" || return 1
+        docker logs -f --tail="$lines" "$container"
     }
 fi
 
