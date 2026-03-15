@@ -18,6 +18,7 @@ cups-pk-helper
 discord
 efibootmgr
 eza
+elephant
 fastfetch
 fd
 ghostscript

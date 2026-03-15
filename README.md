@@ -13,7 +13,9 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `tmux`     | `~/.config/tmux/`      | `tmux`                              |
 | `zellij`   | `~/.config/zellij/`    | `zellij`                            |
 | `nvim`     | `~/.config/nvim/`      | `neovim >= 0.11`, `git`, `rg`, `fd`, `lazygit`, `fzf`, `tree-sitter`, `node`, `luarocks`, `python3`/`pynvim`, `xclip`, `cargo`, `clang`, `llvm`, `unzip` |
+| `elephant` | `~/.config/elephant/`  | `elephant`                          |
 | `keyd`     | `/etc/keyd/` (system)  | `keyd` (AUR/pacman), `systemctl enable --now keyd` |
+| `walker`   | `~/.config/walker/`    | `walker-bin`, `elephant`, `elephant-providerlist`, `elephant-desktopapplications`, `elephant-files`, `elephant-runner`, `elephant-calc`, `elephant-archlinuxpkgs`, `elephant-bluetooth`, `elephant-clipboard`, `elephant-symbols`, `elephant-todo`, `elephant-unicode`, `elephant-websearch` (`elephant` must be running for providers like `calc`, `clipboard`, `symbols`, `unicode`, `archlinuxpkgs`, `todo`, and `bluetooth` to appear) |
 
 ## Dependencies
 
@@ -118,7 +120,21 @@ stow */
 chsh -s $(which zsh)
 ```
 
-### 4. Secrets
+### 4. Walker runtime
+
+Walker uses Elephant providers at runtime. Installing `elephant-calc` is not enough on its own; the `elephant` backend must also be running or providers like `calc` will not show up.
+
+```bash
+elephant service enable
+```
+
+Verify the providers are available with:
+
+```bash
+elephant listproviders
+```
+
+### 5. Secrets
 
 Create `~/.config/zsh/conf.d/99-secrets.zsh` for machine-local secrets (tokens, private aliases). This file is gitignored.
 
@@ -161,10 +177,15 @@ export AWS_PROFILE="..."
 │   └── kitty-scrollback.conf
 ├── tmux/.config/tmux/tmux.conf
 ├── zellij/.config/zellij/config.kdl
+├── elephant/.config/elephant/
+│   └── elephant.toml
 ├── nvim/.config/nvim/
 │   ├── init.lua
 │   ├── lazyvim.json
 │   └── lazy-lock.json
+├── walker/.config/walker/
+│   ├── config.toml
+│   └── themes/catppuccin-mocha/style.css
 └── keyd/etc/keyd/
     └── default.conf         # CapsLock = Esc (tap) / Ctrl (hold)
 ```
