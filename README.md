@@ -8,6 +8,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 |------------|------------------------|-------------------------------------|
 | `zsh`      | `~/.zshenv`, `~/.config/zsh/` | `zsh`, `zinit` (auto-installed), `starship`, `zoxide`, `fzf` (auto-installed), `eza`, `bat`, `uv` |
 | `git`      | `~/.config/git/`       | `git`, `delta`                      |
+| `lazygit`  | `~/.config/lazygit/`   | `lazygit`                           |
 | `starship` | `~/.config/starship/`  | `starship`, `noto-fonts-emoji`, `ttf-jetbrains-mono-nerd`,                           |
 | `kitty`    | `~/.config/kitty/`     | `kitty`                             |
 | `tmux`     | `~/.config/tmux/`      | `tmux`                              |
@@ -165,6 +166,8 @@ export AWS_PROFILE="..."
 ├── git/.config/git/
 │   ├── config
 │   └── ignore
+├── lazygit/.config/lazygit/
+│   └── config.yml
 ├── starship/.config/starship/starship.toml
 ├── kitty/.config/kitty/
 │   ├── kitty.conf
