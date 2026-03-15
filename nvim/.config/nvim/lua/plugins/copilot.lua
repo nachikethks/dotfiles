@@ -1,6 +1,7 @@
 return {
   {
     "copilotlsp-nvim/copilot-lsp",
+    dependencies = { "fang2hou/blink-copilot" },
     init = function()
       local nes_ui = require("copilot-lsp.nes.ui")
       local orig_display_next_suggestion = nes_ui._display_next_suggestion

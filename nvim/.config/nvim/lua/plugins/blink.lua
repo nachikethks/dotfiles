@@ -1,7 +1,6 @@
 return {
   {
     "saghen/blink.cmp",
-    dependencies = { "fang2hou/blink-copilot" },
     opts = {
       keymap = {
         ['<C-j>'] = {'select_next'},
