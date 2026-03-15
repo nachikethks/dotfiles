@@ -17,6 +17,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `elephant` | `~/.config/elephant/`  | `elephant`                          |
 | `keyd`     | `/etc/keyd/` (system)  | `keyd` (AUR/pacman), `systemctl enable --now keyd` |
 | `walker`   | `~/.config/walker/`    | `walker-bin`, `elephant`, `elephant-providerlist`, `elephant-desktopapplications`, `elephant-files`, `elephant-runner`, `elephant-calc`, `elephant-archlinuxpkgs`, `elephant-bluetooth`, `elephant-clipboard`, `elephant-symbols`, `elephant-todo`, `elephant-unicode`, `elephant-websearch` (`elephant` must be running for providers like `calc`, `clipboard`, `symbols`, `unicode`, `archlinuxpkgs`, `todo`, and `bluetooth` to appear) |
+| `zathura`  | `~/.config/zathura/`   | `zathura`                           |
 
 ## Dependencies
 
@@ -189,6 +190,8 @@ export AWS_PROFILE="..."
 ├── walker/.config/walker/
 │   ├── config.toml
 │   └── themes/catppuccin-mocha/style.css
+├── zathura/.config/zathura/
+│   └── zathurarc
 └── keyd/etc/keyd/
     └── default.conf         # CapsLock = Esc (tap) / Ctrl (hold)
 ```

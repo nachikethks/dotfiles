@@ -1,0 +1,30 @@
+# Clipboard
+set selection-clipboard clipboard
+
+# View defaults
+set adjust-open width
+set page-padding 8
+set scroll-page-aware true
+set smooth-scroll true
+set scroll-full-overlap 0.01
+set zoom-step 10
+set zoom-center true
+
+# UI: keep the status bar, hide scrollbars
+set guioptions s
+set statusbar-basename true
+set window-title-basename true
+
+# Search and history
+set incremental-search true
+set database sqlite
+
+# Rendering
+set recolor false
+set render-loading true
+
+# Useful extra bindings
+map D toggle_page_mode
+map i recolor
+map r reload
+map R rotate rotate-cw
