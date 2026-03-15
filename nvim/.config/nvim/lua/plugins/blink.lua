@@ -1,7 +1,11 @@
 return {
   {
     "saghen/blink.cmp",
+    build = "cargo build --release",
     opts = {
+      fuzzy = {
+        implementation = "rust",
+      },
       keymap = {
         ['<C-j>'] = {'select_next'},
         ['<C-k>'] = {'select_prev'},
