@@ -20,7 +20,14 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   pattern = "*",
   callback = function()
     if vim.bo.modified then
-      vim.cmd("silent! write")
+      vim.cmd("silent write")
+      local bufnr = vim.api.nvim_get_current_buf()
+      local uri = vim.uri_from_bufnr(bufnr)
+      for _, client in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
+        if client.supports_method("textDocument/didSave") then
+          client:notify("textDocument/didSave", { textDocument = { uri = uri } })
+        end
+      end
     end
   end,
 })

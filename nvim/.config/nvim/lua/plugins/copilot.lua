@@ -22,6 +22,25 @@ return {
       vim.g.copilot_nes_debounce = 200
       vim.lsp.enable("copilot_ls")
 
+      vim.keymap.set("n", "<leader>ct", function()
+        local clients = vim.lsp.get_clients({ name = "copilot_ls" })
+        local copilot_clients = vim.lsp.get_clients({ name = "copilot" })
+        if #clients > 0 or #copilot_clients > 0 then
+          for _, client in ipairs(clients) do
+            vim.lsp.stop_client(client.id)
+          end
+          for _, client in ipairs(copilot_clients) do
+            vim.lsp.stop_client(client.id)
+          end
+          require("copilot-lsp.nes").clear()
+          vim.notify("Copilot disabled", vim.log.levels.INFO)
+        else
+          vim.lsp.enable("copilot_ls")
+          vim.lsp.enable("copilot")
+          vim.notify("Copilot enabled", vim.log.levels.INFO)
+        end
+      end, { desc = "Toggle Copilot" })
+
       vim.api.nvim_create_autocmd("InsertEnter", {
         callback = function()
           require("copilot-lsp.nes").clear()
