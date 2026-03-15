@@ -1,0 +1,146 @@
+* {
+  rosewater: #f5e0dc;
+  flamingo: #f2cdcd;
+  pink: #f5c2e7;
+  mauve: #cba6f7;
+  red: #f38ba8;
+  maroon: #eba0ac;
+  peach: #fab387;
+  yellow: #f9e2af;
+  green: #a6e3a1;
+  teal: #94e2d5;
+  sky: #89dceb;
+  sapphire: #74c7ec;
+  blue: #89b4fa;
+  lavender: #b4befe;
+  text: #cdd6f4;
+  subtext1: #bac2de;
+  subtext0: #a6adc8;
+  overlay2: #9399b2;
+  overlay1: #7f849c;
+  overlay0: #6c7086;
+  surface2: #585b70;
+  surface1: #45475a;
+  surface0: #313244;
+  base: #1e1e2e;
+  mantle: #181825;
+  crust: #11111b;
+
+  background: @base;
+  background-alt: @mantle;
+  foreground: @text;
+  foreground-muted: @subtext0;
+  border: @blue;
+  selected: @blue;
+  selected-foreground: @base;
+  active: @green;
+  urgent: @red;
+
+  font: "JetBrainsMono Nerd Font Mono 12";
+}
+
+configuration {
+  show-icons: false;
+  modi: "drun,run,filebrowser,window";
+  display-drun: "Apps";
+  display-run: "Run";
+  display-filebrowser: "Files";
+  display-window: "Windows";
+  sort: false;
+  case-sensitive: false;
+  cycle: true;
+}
+
+window {
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 860px;
+  border: 2px;
+  border-radius: 16px;
+  border-color: @border;
+  background-color: @background;
+}
+
+mainbox {
+  spacing: 14px;
+  padding: 20px;
+  background-color: transparent;
+  children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+  spacing: 10px;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 12px;
+  background-color: @background-alt;
+  text-color: @foreground;
+  children: [ "prompt", "entry" ];
+}
+
+prompt {
+  background-color: inherit;
+  text-color: @mauve;
+}
+
+textbox-prompt-colon {
+  enabled: false;
+}
+
+entry {
+  background-color: inherit;
+  text-color: inherit;
+  placeholder: "Search keybinds";
+  placeholder-color: @foreground-muted;
+}
+
+listview {
+  lines: 10;
+  columns: 1;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  layout: vertical;
+  spacing: 8px;
+  background-color: transparent;
+}
+
+element {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 12px;
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+element selected.normal {
+  background-color: @selected;
+  text-color: @selected-foreground;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  highlight: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}
+
+element-icon {
+  enabled: false;
+}
+
+message {
+  border: 0;
+  background-color: transparent;
+}
+
+textbox {
+  background-color: transparent;
+  text-color: @foreground-muted;
+}
+
+scrollbar {
+  enabled: false;
+}
