@@ -39,7 +39,6 @@ if command -q csvlens
 end
 
 # Misc
-alias openvpn_connect "sudo openvpn ~/Downloads/aihub-qa.ovpn"
 alias claude-mem "$HOME/.bun/bin/bun \"$HOME/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs\""
 
 # Abbreviations — expand in-place so you see the full command before running
