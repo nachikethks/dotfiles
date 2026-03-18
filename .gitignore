@@ -2,6 +2,12 @@
 zsh/.config/zsh/conf.d/99-secrets.zsh
 fish/.config/fish/conf.d/99-secrets.fish
 
+# Auto-managed by fish (universal vars) - machine-specific
+fish/.config/fish/fish_variables
+
+# Auto-generated completions (e.g. docker completion fish)
+fish/.config/fish/completions/
+
 git/.config/git/local.conf
 
 # Build artifacts and logs

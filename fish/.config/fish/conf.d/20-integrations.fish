@@ -43,11 +43,6 @@ else if command -q batcat
     set -gx MANROFFOPT -c
 end
 
-# Bun completions
-if test -s "$HOME/.bun/_bun"
-    source "$HOME/.bun/_bun"
-end
-
 # uv — lazy-load completions on first use
 if command -q uv; and not functions -q __uv_original
     function uv --wraps uv
