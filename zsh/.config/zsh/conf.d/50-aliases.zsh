@@ -42,7 +42,7 @@ alias -- -='cd -'
 (( $+commands[git] )) && alias gca='git commit --amend'
 (( $+commands[csvlens] )) && alias csvlens='csvlens --color-columns'
 
-alias openvpn_connect="sudo openvpn ~/Downloads/aihub-qa.ovpn"
+export LESS='--wheel-lines=1'
 alias claude-mem="$HOME/.bun/bin/bun \"$HOME/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs\""
 
 if (( $+commands[docker] )); then
