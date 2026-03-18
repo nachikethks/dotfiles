@@ -1,5 +1,6 @@
 # Modular zsh secrets file - never commit
 zsh/.config/zsh/conf.d/99-secrets.zsh
+fish/.config/fish/conf.d/99-secrets.fish
 
 git/.config/git/local.conf
 
