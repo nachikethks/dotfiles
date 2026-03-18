@@ -1,3 +1,19 @@
+-- Persist hidden/ignored toggles across picker invocations (within a session)
+local picker_state = { hidden = false, ignored = false }
+
+local function with_persistent_toggles(opts)
+  opts = opts or {}
+  opts.hidden = picker_state.hidden
+  opts.ignored = picker_state.ignored
+  local user_on_close = opts.on_close
+  opts.on_close = function(picker)
+    picker_state.hidden = picker.opts.hidden or false
+    picker_state.ignored = picker.opts.ignored or false
+    if user_on_close then user_on_close(picker) end
+  end
+  return opts
+end
+
 local layout_presets = {
   "default",
   "bottom",
@@ -28,6 +44,33 @@ end
 
 return {
   "folke/snacks.nvim",
+  keys = {
+    {
+      "<leader>ff",
+      function() Snacks.picker.files(with_persistent_toggles()) end,
+      desc = "Find Files",
+    },
+    {
+      "<leader><space>",
+      function() Snacks.picker.smart(with_persistent_toggles()) end,
+      desc = "Smart Find",
+    },
+    {
+      "<leader>sg",
+      function() Snacks.picker.grep(with_persistent_toggles()) end,
+      desc = "Grep",
+    },
+    {
+      "<leader>fg",
+      function() Snacks.picker.git_files(with_persistent_toggles()) end,
+      desc = "Find Files (git)",
+    },
+    {
+      "<leader>sG",
+      function() Snacks.picker.grep(with_persistent_toggles({ cwd = vim.fn.getcwd() })) end,
+      desc = "Grep (cwd)",
+    },
+  },
   opts = {
     explorer = {
       -- Don't hijack directory buffers on startup (keeps explorer closed by default)
