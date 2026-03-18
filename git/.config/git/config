@@ -33,7 +33,7 @@
   defaultBranch = main
 
 [alias]
-  lg = log --graph --pretty=format:'%Cred%h%Creset %<(80,trunc)%s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lgg = log --graph --pretty=format:'%Cgreen%ad%Creset %C(bold blue)<%an>%Creset %C(yellow)%d%Creset %Cred%h%Creset %<(80,trunc)%s' --abbrev-commit --date=format:'%Y-%m-%d %H:%M'
   co = checkout
   br = !git branch -vv --format='%(if)%(HEAD)%(then)* %(else)  %(end)%(refname:short)\t%(upstream:short)\t%(objectname:short)\t%(contents:subject)' | column -t -s $'\t'
