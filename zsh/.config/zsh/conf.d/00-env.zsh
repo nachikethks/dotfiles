@@ -8,6 +8,7 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:${HOME}/.cargo/bin"
 
 export EDITOR="nvim"
+export LESS="-R"
 
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
