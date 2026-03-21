@@ -7,6 +7,8 @@ set -gx BUN_INSTALL $HOME/.bun
 set -gx CONDA_CHANGEPS1 false
 set -gx LESS '-R --wheel-lines=1'
 set -gx FZF_COMPLETION_OPTS '--nth=1,2'
+set -g __done_kitty_remote_control 1
+set -g __done_kitty_remote_control_password ''
 
 fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path $HOME/.local/bin
