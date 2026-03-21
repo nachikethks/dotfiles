@@ -33,7 +33,7 @@
     },
 
     "upower": {
-        "icon-size": 20,
+        "icon-size": 16,
         "format": "",
         "format-alt": "{}<span color='orange'>[{time}]</span>",
         "tooltip": true,
@@ -117,7 +117,7 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "󰅸",
+            "notification": "󱅫",
             "none": "󰂜",
             "dnd-notification": "󰅸",
             "dnd-none": "󱏨",
@@ -162,9 +162,7 @@
         "format": "{icon}",
         "format-icons": {
             "default": "",
-            "active": "",
-            //"default": "○",
-            //"default": "●"
+            "active": ""
         }
     },
 
@@ -173,29 +171,6 @@
             "3": [], // Always show a workspace with name '3', on all outputs if it does not exists
             "4": ["eDP-1"], // Always show a workspace with name '4', on output 'eDP-1' if it does not exists
             "5": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
-        }
-    },
-
-
-    "cava": {
-        "cava_config": "~/.config/cava/config",
-        "framerate": 60,
-        "autosens": 1,
-        "bars": 14,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-            "on-click-right": "mode"
         }
     },
 
@@ -303,9 +278,9 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%a, %d %b - %H:%M}",
+        "format-alt": "{:%A, %d %B %Y}",
         "rotate": 0,
-        "on-click": "/usr/local/bin/ags -t ActivityCenter",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
