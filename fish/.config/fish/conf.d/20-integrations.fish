@@ -26,7 +26,7 @@ end
 
 # Fzf (base keybindings only — fzf.fish handles completions)
 if command -q fzf
-    fzf --fish | source
+    _cached_source fzf --fish
 end
 
 # Navi cheatsheets
