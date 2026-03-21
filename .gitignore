@@ -8,6 +8,9 @@ fish/.config/fish/fish_variables
 # Auto-generated completions (e.g. docker completion fish)
 fish/.config/fish/completions/
 
+# fzf.fish plugin internal functions (managed by fisher)
+fish/.config/fish/functions/_fzf_*
+
 git/.config/git/local.conf
 
 # Build artifacts and logs

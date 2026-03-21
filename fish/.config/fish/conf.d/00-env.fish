@@ -6,6 +6,7 @@ set -gx PNPM_HOME $HOME/.local/share/pnpm
 set -gx BUN_INSTALL $HOME/.bun
 set -gx CONDA_CHANGEPS1 false
 set -gx LESS '-R --wheel-lines=1'
+set -gx FZF_COMPLETION_OPTS '--nth=1,2'
 
 fish_add_path /opt/nvim-linux-x86_64/bin
 fish_add_path $HOME/.local/bin

@@ -24,9 +24,9 @@ if command -q zoxide
     _cached_source zoxide init --cmd cd fish
 end
 
-# Fzf
+# Fzf (base keybindings only — fzf.fish handles completions)
 if command -q fzf
-    _cached_source fzf --fish
+    fzf --fish | source
 end
 
 # Navi cheatsheets
