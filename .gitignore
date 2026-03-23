@@ -8,9 +8,14 @@ fish/.config/fish/fish_variables
 # Auto-generated completions (e.g. docker completion fish)
 fish/.config/fish/completions/
 
-# Fisher plugin internal functions
+# Fisher-managed files (installed/updated by fisher)
+fish/.config/fish/functions/fisher.fish
+fish/.config/fish/functions/fzf_configure_bindings.fish
 fish/.config/fish/functions/_fzf_*
 fish/.config/fish/functions/_autopair_*
+fish/.config/fish/conf.d/fzf.fish
+fish/.config/fish/conf.d/done.fish
+fish/.config/fish/conf.d/autopair.fish
 
 git/.config/git/local.conf
 
