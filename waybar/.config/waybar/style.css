@@ -219,6 +219,18 @@ tooltip {
     padding-right: 3px;
 }
 
+#pulseaudio.microphone {
+    font-weight: normal;
+    font-size: 18px;
+    color: @teal;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#pulseaudio.microphone.source-muted {
+    color: @overlay0;
+}
+
 #cpu {
     font-weight: normal;
     font-size: 22px;

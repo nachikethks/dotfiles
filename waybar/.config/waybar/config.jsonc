@@ -20,17 +20,10 @@
 
     "modules-left": ["custom/smallspacer","hyprland/workspaces","custom/spacer","mpris"],
     "modules-center": ["custom/padd","custom/l_end","custom/r_end","hyprland/window","custom/padd"],
-    "modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu","clock","custom/notification","custom/padd"],
+    "modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","pulseaudio#microphone","group/expand-2","group/expand-4","memory","cpu","clock","custom/notification","custom/padd"],
 
 
     // sourced from modules based on config.ctl //
-
-    "custom/led": {
-        "format": "<span color='#021c18'>󰍿</span> <span color='#313436'></span> ",
-        "format-alt": "󰍿 <span color='#bbc2c7'></span> ",
-        "on-click": "~/mouse.sh",
-        "tooltip": false
-    },
 
     "upower": {
         "icon-size": 16,
@@ -339,7 +332,7 @@
             "transition-to-left": true,
             "click-to-reveal": true
         },
-        "modules": ["backlight","backlight/slider","custom/smallspacer","custom/led"]
+        "modules": ["backlight","backlight/slider","custom/smallspacer"]
     },
 
     "group/expand-3": {
@@ -390,10 +383,9 @@
         "rotate": 0,
         "format-source": "",
         "format-source-muted": "",
-        "on-click": "pavucontrol -t 4",
-        "on-click-middle": "volumecontrol.sh -i m",
-        "on-scroll-up": "volumecontrol.sh -i i",
-        "on-scroll-down": "volumecontrol.sh -i d",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
         "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
         "scroll-step": 5
     },
