@@ -70,6 +70,20 @@ return {
       function() Snacks.picker.grep(with_persistent_toggles({ cwd = vim.fn.getcwd() })) end,
       desc = "Grep (cwd)",
     },
+    {
+      "<leader>fp",
+      function()
+        Snacks.picker.projects({
+          confirm = function(picker, item)
+            require("persistence").save()
+            picker:close()
+            vim.fn.chdir(item.file)
+            require("persistence").load()
+          end,
+        })
+      end,
+      desc = "Projects (with session)",
+    },
   },
   opts = {
     explorer = {
