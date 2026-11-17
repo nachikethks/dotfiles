@@ -24,6 +24,9 @@ nvim/.config/nvim/startup.log
 nvim/.config/nvim/lazygit/
 nvim/.config/nvim/lazy-lock.json
 
+pgcli/.config/pgcli/history
+pgcli/.config/pgcli/log
+
 btop/.config/btop/btop.log
 btop/.config/btop/btop.conf
 
